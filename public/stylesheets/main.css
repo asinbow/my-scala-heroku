@@ -23,6 +23,7 @@ div#weiboid a {
     font-family: arial, sans-serif;
     font-size: 20px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 div#weiboid a:hover {

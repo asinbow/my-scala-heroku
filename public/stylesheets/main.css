@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    background-color: #9CC9A0;
+}
+
+div#head {
+    margin-left: 0;
+    margin-right: 0;
+    width:100%;
+    height:40px;
+    background-color: rgba(39, 17, 87, 0.63);
+}
+
+div#weiboid {
+    padding-top: 5px;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+}
+
+div#weiboid a {
+    color: white;
+    font-family: arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div#weiboid a:hover {
+    color: #E66969;
+}
+
+div#content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+p#mdvalue {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+}
+
+textarea#userinput {
+    width: 100%;
+    height: 200px;
+    background-color: #F8EAEA;
+}
+
+select#algorithms {
+    float: right;
+}
+div#prompt {
+    margin-left: 3px;
+    width: 100%;
+}
+
+div#generatediv {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+}
+
+button#generate {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+}
+
+p#mdvalue {
+    color: #5815AD;
+}

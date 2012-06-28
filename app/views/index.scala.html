@@ -1,0 +1,56 @@
+@(title: String, algorithms: Array[String], weiboid: String)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function(){
+                    $("#algorithms")[0].value="MD5";
+                    $("#userinput")[0].value="Some input here...";
+                    $("#generate").click(function(){
+                        var userinput = $("#userinput")[0].value;
+                        var algorithm = $("#algorithms")[0].value;
+                        $.ajax({
+                            type: "POST",
+                            url: "/message_digest",
+                            contentType: "application/json",
+                            data: JSON.stringify({ userinput: userinput, algorithm: algorithm }),
+                            success: function(data){
+                                $("#mdvalue").text(data);
+                            },
+                            error: function(){
+                                $("#mdvalue").text("remote error");
+                            }
+                            });
+                        })
+                    });
+        </script>
+    </head>
+    <body>
+        <div id="head">
+            <div id="weiboid">
+                <a href="@weiboid">@@ASINBOW</a>
+            </div>
+        </div>
+        <div id="content">
+            <div id="prompt">
+                Text:
+                <select id="algorithms">
+                    @for(algorithm <- algorithms) {
+                    <option value="@algorithm">@algorithm</option>
+                    }
+                </select>
+            </div>
+            <textarea id="userinput"></textarea>
+            <div id="generatediv">
+                <button id="generate">Calculate</button>
+            </div>
+        </div>
+        <p id="mdvalue"></p>
+    </body>
+</html>

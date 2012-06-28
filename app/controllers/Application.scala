@@ -22,7 +22,7 @@ object Application extends Controller {
     request.body.asJson match {
       case Some(json) => {
         val md = java.security.MessageDigest.getInstance((json\"algorithm").as[String])
-        md.update((json\"userinput").as[String].getBytes)
+        md.update((json\"text").as[String].getBytes)
 
         val mdvalue = org.apache.commons.codec.binary.Hex.encodeHex(md.digest())
         Ok(new String(mdvalue))

@@ -19,7 +19,7 @@
                             type: "POST",
                             url: "/message_digest",
                             contentType: "application/json",
-                            data: JSON.stringify({ userinput: userinput, algorithm: algorithm }),
+                            data: JSON.stringify({ text: userinput, algorithm: algorithm }),
                             success: function(data){
                                 $("#mdvalue").text(data);
                             },

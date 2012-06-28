@@ -1,1 +1,1 @@
-web: target/start -DapplyEvolutions.default=true ${JAVA_OPTS}
+web: target/start -Dhttp.port=${PORT} ${JAVA_OPTS}

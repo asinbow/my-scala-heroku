@@ -1,5 +1,3 @@
 #!/bin/bash
 
-export DATABASE_URL=jdbc:postgresql://localhost/play
-export DATABASE_USER=play
-export DATABASE_PASS=play
+DATABASE_URL=jdbc:postgresql://localhost/play DATABASE_USER=play DATABASE_PASS=play play run

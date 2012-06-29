@@ -1,3 +1,3 @@
 #!/bin/bash
 
-DATABASE_URL=jdbc:postgresql://localhost/play DATABASE_USER=play DATABASE_PASS=play play run
+DATABASE_URL="jdbc:postgresql://localhost/play?user=play&password=play" play run

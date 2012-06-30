@@ -1,6 +1,9 @@
 package controllers
 
+import play.api.Play.current
+import anorm._
 import play.api._
+import play.api.db._
 import play.api.mvc._
 import play.api.templates.Html
 
@@ -15,7 +18,12 @@ object Application extends Controller {
       "MD2",
       "MD5"
     )
-    Ok(views.html.index("Message Digest", algorithms, "http://weibo.com/u/1715376223"))
+    var visitCount: Long = 0
+    DB.withConnection { implicit c =>
+      visitCount = SQL("SELECT count FROM counters WHERE keyword='visit' LIMIT 1")().head[Long]("count")
+      SQL("UPDATE counters SET count = count + 1 WHERE keyword='visit'").execute()
+    }
+    Ok(views.html.index("Message Digest", visitCount + 1, algorithms, "http://weibo.com/u/1715376223"))
   }
 
   def message_digest = Action { request =>

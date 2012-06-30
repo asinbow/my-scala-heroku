@@ -1,4 +1,4 @@
-@(title: String, algorithms: Array[String], weiboid: String)
+@(title: String, visitorCounter: Long, algorithms: Array[String], weiboid: String)
 
 <!DOCTYPE html>
 
@@ -35,6 +35,7 @@
         <div id="head">
             <div id="weiboid">
                 <a href="@weiboid">@@ASINBOW</a>
+                <span id="visitorCounter">visited: @visitorCounter</span>
             </div>
         </div>
         <div id="content">

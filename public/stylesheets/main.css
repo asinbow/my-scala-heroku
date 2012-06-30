@@ -30,6 +30,12 @@ div#weiboid a:hover {
     color: #E66969;
 }
 
+span#visitorCounter {
+    float: right;
+    color: #6D7E9C;
+}
+
+
 div#content {
     margin-left: auto;
     margin-right: auto;

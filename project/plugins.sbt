@@ -6,7 +6,11 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 
 resolvers += "Maven Central Server" at "http://repo1.maven.org/maven2/"
 
+resolvers += "JBoss repository" at "https://repository.jboss.org/nexus/content/repositories/"
+
 resolvers += "java.net Maven2 Repository" at "http://download.java.net/maven/2"
+
+resolvers += "Scala Tools Releases" at "http://scala-tools.org/repo-releases/"
 
 resolvers += "Scala Tools Releases" at "http://scala-tools.org/repo-releases/"
 

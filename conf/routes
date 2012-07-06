@@ -5,7 +5,12 @@
 # Home page
 GET     /                           controllers.Application.index
 
-POST    /message_digest             controllers.Application.message_digest
+GET     /message_digest             controllers.MessageDigest.index
+POST    /message_digest             controllers.MessageDigest.message_digest
+
+GET     /short_url                  controllers.ShortURL.index
+POST    /short_url_gen              controllers.ShortURL.short_url_generate
+GET     /short_url/*hashval         controllers.ShortURL.short_url(hashval)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

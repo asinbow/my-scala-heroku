@@ -7,12 +7,13 @@ div#head {
     margin-left: 0;
     margin-right: 0;
     width:100%;
-    height:40px;
+    height:38px;
     background-color: rgba(39, 17, 87, 0.63);
 }
 
 div#weiboid {
-    padding-top: 5px;
+    height:38px;
+    padding-top: 8px;
     vertical-align: middle;
     text-align: center;
     color: white;
@@ -20,9 +21,7 @@ div#weiboid {
 
 div#weiboid a {
     color: white;
-    font-family: arial, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
+    font: bold 20px arial, sans-serif;
     text-decoration: none;
 }
 
@@ -32,6 +31,7 @@ div#weiboid a:hover {
 
 span#visitorCounter {
     float: right;
+    font: 10px Times New n;
     color: #6D7E9C;
 }
 
@@ -42,12 +42,13 @@ div#content {
     width: 40%;
 }
 
-p#mdvalue {
+p.centerTextResult {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     height: 20px;
     text-align: center;
+    color: #5815AD;
 }
 
 textarea#userinput {
@@ -76,6 +77,34 @@ button#generate {
     width: 80px;
 }
 
-p#mdvalue {
-    color: #5815AD;
+#fullurl{
+    width: 400px;
+    text-align: center;
+}
+
+.linkButton{
+    display: block;
+    text-decoration: none;
+}
+
+.centerDiv{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #92B6B2;
+    width: 150px;
+    text-align: center;
+}
+#shortURLPanel{
+    margin-top: 20px;
+}
+#fullurl {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#getShortURL {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+    display: block;
 }

@@ -1,0 +1,51 @@
+@(title: String, weiboid: String)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function(){
+                    $("#getShortURL").click(function(){
+                        var fullurl = $("#fullurl").val();
+                        $.ajax({
+                            type: "POST",
+                            url: "/short_url_gen",
+                            contentType: "application/json",
+                            data: JSON.stringify({ full_url: fullurl }),
+                            success: function(data){
+                                var url = window.location.href + "/" + data;
+                                $("#shortURLResult").children().remove();
+                                $("#shortURLResult").append('<a href="' + url + '">' + url + '</a>');
+                            },
+                            error: function(){
+                                $("#shortURLResult").text("remote error");
+                            }
+                            });
+                        })
+                    });
+        </script>
+    </head>
+    <body>
+        <div id="head">
+            <div id="weiboid">
+                <a href="@weiboid">@@ASINBOW</a>
+            </div>
+        </div>
+        <div id="content">
+            <div id="shortURLPanel">
+                <div>
+                    <input id="fullurl" type="text" value="http://"/>
+                </div>
+                <div>
+                    <input id="getShortURL" type="button" value="generate"/>
+                </div>
+            </div>
+        </div>
+        <p id="shortURLResult" class="centerTextResult"></p>
+    </body>
+</html>

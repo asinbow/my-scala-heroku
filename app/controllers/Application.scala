@@ -15,15 +15,9 @@ import models.Database.database
 
 object Application extends Controller {
 
+  def weiboid = "http://weibo.com/u/1715376223"
+
   def index = Action {
-    val algorithms = Array(
-      "SHA-1",
-      "SHA-256",
-      "SHA-384",
-      "SHA-512",
-      "MD2",
-      "MD5"
-    )
     //var visitCount: Long = 0
     //DB.withConnection { implicit c =>
     //  visitCount = SQL("SELECT count FROM counters WHERE keyword='visit' LIMIT 1")().head[Long]("count")
@@ -37,22 +31,7 @@ object Application extends Controller {
       query.update(vc + 1) // FIXME not atomic operation
       vc
     }
-    Ok(views.html.index("Message Digest", visitCount + 1, algorithms, "http://weibo.com/u/1715376223"))
-  }
-
-  def message_digest = Action { request =>
-    request.body.asJson match {
-      case Some(json) => {
-        val md = java.security.MessageDigest.getInstance((json\"algorithm").as[String])
-        md.update((json\"text").as[String].getBytes)
-
-        val mdvalue = org.apache.commons.codec.binary.Hex.encodeHex(md.digest())
-        Ok(new String(mdvalue))
-      }
-      case None => {
-        Ok("Invalid data")
-      }
-    }
+    Ok(views.html.index("ASINBOW", visitCount + 1, weiboid))
   }
   
 }

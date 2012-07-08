@@ -15,3 +15,13 @@ Provided algorithm:
 * SHA-512
 * MD2
 * MD5
+
+milestone:
+* 0.1.2
+  * integrate less.js
+  * integrate juicer.js
+* 0.1.4
+  * better css look
+
+current version:
+**0.1.0**

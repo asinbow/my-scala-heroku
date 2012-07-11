@@ -22,6 +22,8 @@ milestone:
   * integrate juicer.js
 * 0.1.4
   * better css look
+  * use less compiler instead of less.js
+  * optimize short URL algorithm
 
 current version:
 **0.1.2**

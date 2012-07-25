@@ -24,6 +24,9 @@ milestone:
   * better css look
   * use less compiler instead of less.js
   * optimize short URL algorithm
+* 0.1.6
+  * integrate twitter bootstrap
+  * use twitter bootstrap to optimize look
 
 current version:
 **0.1.2**
